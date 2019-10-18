@@ -2,8 +2,8 @@ package com.example.udacityapplicationmiwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
@@ -13,6 +13,9 @@ public class PhrasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        LinearLayout layout = findViewById(R.id.text_background);
+        //layout.setBackgroundColor(R.color.category_phrases);
+        //layout.setBackground(R.color.category_phrases);
         // Create a list of words
         ArrayList<Word> words = new ArrayList<>();
 
@@ -32,7 +35,7 @@ public class PhrasesActivity extends AppCompatActivity {
         // simple_list_item_1.xml layout resource defined in the Android framework.
         // This list item layout contains a single {@link TextView}, which the adapter will set to
         // display a single word.
-        WordAdapter<Word> itemsAdapter = new WordAdapter<>(this, words);
+        WordAdapter<Word> itemsAdapter = new WordAdapter<>(this, words,R.color.category_phrases);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the

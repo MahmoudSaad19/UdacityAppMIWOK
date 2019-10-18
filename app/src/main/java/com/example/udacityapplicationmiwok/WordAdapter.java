@@ -5,15 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 
 public class WordAdapter<W> extends ArrayAdapter {
 
+    private int color ;
 
-    public WordAdapter(Context context, ArrayList<W> words) {
+    WordAdapter(Context context, ArrayList<W> words, int color) {
         super(context, 0 ,words);
-
+        this.color = color ;
     }
 
 
@@ -38,7 +41,21 @@ public class WordAdapter<W> extends ArrayAdapter {
         TextView textView_miwok = convertView.findViewById(R.id.miwok_view);
         // set this text on the number TextView
         textView_miwok.setText(wordObj.getMiwokTranslation());
+
+        LinearLayout layout = convertView.findViewById(R.id.text_background);
+        layout.setBackgroundResource(color);
+
+        ImageView imageView = convertView.findViewById(R.id.image_icon);
+        if (wordObj.getmImageResourceId()!=0) {
+            imageView.setImageResource(wordObj.getmImageResourceId());
+        }
+        else {
+            imageView.setVisibility(View.GONE);
+            layout.setBackgroundResource(R.color.category_phrases);
+        }
+
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
-        return convertView;    }
+        return convertView;
+    }
 }
