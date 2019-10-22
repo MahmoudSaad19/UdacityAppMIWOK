@@ -11,6 +11,18 @@ class Word {
     /** Image resource ID for the word */
     private int mImageResourceId;
 
+    private int audio;
+
+    Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId, int audio) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mImageResourceId = mImageResourceId;
+        this.audio = audio;
+    }
+
+    int getAudioResourceId() {
+        return audio;
+    }
     /**
      * Create a new Word object.
      *
@@ -22,12 +34,14 @@ class Word {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId =0;
+        audio = 0;
     }
 
-    Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId) {
+    Word(String mDefaultTranslation, String mMiwokTranslation, int audio) {
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = mMiwokTranslation;
-        this.mImageResourceId = mImageResourceId;
+        this.mImageResourceId = 0;
+        this.audio = audio;
     }
 
     /**

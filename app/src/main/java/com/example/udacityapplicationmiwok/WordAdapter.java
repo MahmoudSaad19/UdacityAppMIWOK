@@ -1,19 +1,23 @@
 package com.example.udacityapplicationmiwok;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class WordAdapter<W> extends ArrayAdapter {
 
     private int color ;
-
     WordAdapter(Context context, ArrayList<W> words, int color) {
         super(context, 0 ,words);
         this.color = color ;
@@ -42,7 +46,7 @@ public class WordAdapter<W> extends ArrayAdapter {
         // set this text on the number TextView
         textView_miwok.setText(wordObj.getMiwokTranslation());
 
-        LinearLayout layout = convertView.findViewById(R.id.text_background);
+        RelativeLayout layout = convertView.findViewById(R.id.text_background);
         layout.setBackgroundResource(color);
 
         ImageView imageView = convertView.findViewById(R.id.image_icon);

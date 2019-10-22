@@ -4,47 +4,69 @@
     android:id="@+id/list_item_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
     android:orientation="horizontal">
 
     <ImageView
-        android:background="@color/tan_background"
         android:id="@+id/image_icon"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:src="@mipmap/ic_launcher_foreground"
-        android:contentDescription="@string/app_name" />
+        android:background="@color/tan_background"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_launcher_foreground" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/text_background"
-        android:background="@color/category_numbers"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
+        android:background="@color/category_numbers"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/miwok_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:padding="1dp"
-            tools:text="lutti" />
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/default_text_view"
+            <TextView
+                android:id="@+id/miwok_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="lutti" />
+
+            <TextView
+                android:id="@+id/default_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:text="one" />
+
+        </LinearLayout>
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:padding="1dp"
-            tools:text="one" />
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"/>
 
-    </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+
+
 </LinearLayout>
 
 
